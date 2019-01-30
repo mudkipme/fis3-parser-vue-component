@@ -71,6 +71,7 @@ module.exports = function(content, file, conf) {
   scriptStr += '}else{\n';
   scriptStr += '  __vue__options__ = module.exports;\n';
   scriptStr += '}\n';
+  scriptStr += 'if(__vue__options__.options) {__vue__options__ = __vue__options__.options}\n';
 
   if(output.template){
     var templateContent = fis.compile.partial(output.template.content, file, {
